@@ -361,9 +361,18 @@ body {
 			    display: flex;
 			    justify-content: center;
 
+			    @media @mobile {
+					display: block;
+				}
+
 				.input {
 					width: 70%;
 					padding: 0 30px;
+
+					@media @mobile {
+						width: 90%;
+						padding: 20px;
+					}
 
 					&::placeholder {
 						color: @red;
@@ -374,6 +383,13 @@ body {
 
 				.btn-red {
 					padding: 10px 40px;
+					
+					@media @mobile {
+						display: block;
+						margin: 20px auto;
+						width: 250px;
+					}
+
 				}
 			}
 

@@ -379,9 +379,20 @@ body #main .banner .home-form {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 719px) {
+  body #main .banner .home-form {
+    display: block;
+  }
+}
 body #main .banner .home-form .input {
   width: 70%;
   padding: 0 30px;
+}
+@media only screen and (max-width: 719px) {
+  body #main .banner .home-form .input {
+    width: 90%;
+    padding: 20px;
+  }
 }
 body #main .banner .home-form .input::placeholder {
   color: #b21736;
@@ -390,6 +401,13 @@ body #main .banner .home-form .input::placeholder {
 }
 body #main .banner .home-form .btn-red {
   padding: 10px 40px;
+}
+@media only screen and (max-width: 719px) {
+  body #main .banner .home-form .btn-red {
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+  }
 }
 body #main .report {
   background: #282727;
