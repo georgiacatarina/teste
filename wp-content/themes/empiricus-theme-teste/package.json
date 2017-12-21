@@ -1,0 +1,26 @@
+{
+  "name": "empiricus-theme-teste",
+  "version": "1.0.0",
+  "description": "teste empiricus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/georgiacatarina/teste.git"
+  },
+  "author": "georgiacatarina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgiacatarina/teste/issues"
+  },
+  "homepage": "https://github.com/georgiacatarina/teste#readme",
+  "devDependencies": {
+    "browser-sync": "^2.19.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.2",
+    "jshint": "^2.9.5"
+  }
+}

@@ -1,0 +1,493 @@
+/*!
+Theme Name: Empiricus
+Theme URI: 
+Description: Tema criado para o teste front-end job empiricus
+Author: Georgia Catarina
+Author URI: https://georgiacatarina.github.io/
+Version: 1.0
+Tags: responsive, empiricus, less
+
+*/
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,400,400i,600,700,900');
+html,
+body {
+  border: 0;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.btn-red {
+  background: #b21736;
+  border: 1px solid #b21736;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 21px;
+}
+.btn-circle {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #fff;
+  height: 30px;
+  color: #b21736;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -20px;
+}
+.btn-circle .icon {
+  font-size: 40px;
+  margin: 0 auto;
+  display: block;
+}
+.title {
+  color: #fff;
+  margin: 20px 0;
+}
+.title-secondary {
+  color: #b21736;
+}
+.ptext {
+  color: #6d6d6d;
+  margin: 30px 0;
+}
+body h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body h2 {
+    font-size: 2em;
+  }
+}
+body h3 {
+  color: #6d6d6d;
+  font-size: 29px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+body .container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body .container {
+    padding: 0 20px;
+  }
+}
+body .flex {
+  display: flex;
+}
+body .end {
+  justify-content: flex-end;
+}
+body .between {
+  justify-content: space-between;
+  align-items: center;
+}
+body header {
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    border-bottom: 1px solid #6d6d6d;
+  }
+}
+body header .container {
+  max-width: 919px;
+}
+body header h1 {
+  background: url(../images/logo.png) no-repeat 0;
+  width: 202px;
+  text-indent: -9999px;
+  height: 68px;
+  background-size: contain;
+}
+body header .menu-mobile {
+  display: none;
+  font-size: 40px;
+  color: #b21736;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body header .menu-mobile {
+    display: block;
+    right: 30px;
+    position: absolute;
+    top: 30px;
+  }
+}
+body header .menu-main {
+  max-width: 636px;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body header .menu-main {
+    display: none;
+    position: absolute;
+    top: 131px;
+    background: #fff;
+    width: 90%;
+    right: 0;
+    text-align: right;
+    font-size: 2em;
+  }
+}
+body header .menu-main ul {
+  display: flex;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body header .menu-main ul {
+    display: block;
+  }
+}
+body header .menu-main ul li {
+  margin: 0 15px;
+}
+@media only screen and (min-width: 960px) {
+  body header .menu-main ul li:first-child {
+    margin-left: 0;
+  }
+  body header .menu-main ul li:last-child {
+    margin-right: 0;
+  }
+}
+body header .menu-main ul li a {
+  font-size: 14px;
+}
+body header .menu-main ul li a:hover {
+  color: #b21736;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body #main {
+    position: relative;
+    top: 130px;
+  }
+}
+body #main .banner {
+  background: url(../images/banner-bg.png) no-repeat;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+  padding: 70px 0;
+}
+body #main .banner .float-social {
+  position: absolute;
+  top: 125px;
+  left: 5%;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body #main .banner .float-social {
+    display: none;
+  }
+}
+body #main .banner .float-social a {
+  display: block;
+}
+body #main .banner .float-social a.face {
+  background: #3b5998;
+}
+body #main .banner .float-social a.twt {
+  background: #00aced;
+}
+body #main .banner .float-social a.lkn {
+  background: #0077B5;
+}
+body #main .banner .float-social a.ggl {
+  background: #dd4b39;
+}
+body #main .banner .float-social a.zap {
+  background: #25d366;
+}
+body #main .banner .float-social a.mail {
+  background: #6d6d6d;
+}
+body #main .banner .float-social .count {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 2px 5px;
+  font-family: Arial;
+}
+body #main .banner .float-social .icones {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  line-height: 40px;
+  height: 40px;
+}
+body #main .banner .container {
+  max-width: 768px;
+}
+body #main .banner .title {
+  text-align: center;
+}
+body #main .banner h4 {
+  font-size: 21px;
+  color: #fff;
+  width: 100%;
+  max-width: 50%;
+  margin: 20px auto;
+  text-align: center;
+  font-weight: 100;
+}
+body #main .banner .home-form {
+  width: 100%;
+  max-width: 684px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+body #main .banner .home-form .input {
+  width: 70%;
+  padding: 0 30px;
+}
+body #main .banner .home-form .input::placeholder {
+  color: #b21736;
+  font-size: 16px;
+  font-style: italic;
+}
+body #main .banner .home-form .btn-red {
+  padding: 10px 40px;
+}
+body #main .report {
+  background: #282727;
+  padding: 70px 0;
+}
+body #main .report .ptext {
+  color: #fff;
+}
+body #main .advantages {
+  padding: 70px 0;
+}
+body #main .advantages .btn-red.top {
+  font-size: 16px;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+}
+body #main .advantages .btn-red.top .icon {
+  vertical-align: -4px;
+  font-size: 32px;
+  margin: 0 10px 0 0;
+}
+body #main .about {
+  padding: 70px 0;
+  background: url(../images/background-footer.png) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+body #main .about .ptext {
+  color: #fff;
+  line-height: 30px;
+  font-size: 21px;
+  z-index: 2;
+  position: relative;
+}
+body #main .about .logo-footer {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  z-index: 1;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body #main .about .logo-footer {
+    opacity: 0.5;
+  }
+}
+body #main footer.rodape {
+  background: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+body #main footer.rodape .ptext {
+  color: #fff;
+  margin-top: 0;
+  font-size: 14px;
+}
+body #main footer.rodape .ptext a {
+  color: #fff;
+}
+body #main footer.rodape .contact {
+  align-items: baseline;
+}
+@media only screen and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  body #main footer.rodape .contact {
+    flex-direction: column;
+  }
+}
+body #main footer.rodape .contact h4 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+body #main footer.rodape .contact address {
+  font-style: normal;
+}
+body #main footer.rodape .contact address img,
+body #main footer.rodape .contact address p {
+  float: left;
+}
+body #main footer.rodape .contact address .ptext {
+  margin-left: 10px;
+}
+body #main footer.rodape .contact .social {
+  display: flex;
+  margin-bottom: 20px;
+}
+body #main footer.rodape .contact .social a {
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+body #main footer.rodape .contact .social a i {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+body #main footer.rodape .legal small {
+  font-size: 12px;
+}

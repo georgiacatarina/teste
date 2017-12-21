@@ -1,0 +1,516 @@
+/*!
+Theme Name: Empiricus
+Theme URI: 
+Description: Tema criado para o teste front-end job empiricus
+Author: Georgia Catarina
+Author URI: https://georgiacatarina.github.io/
+Version: 1.0
+Tags: responsive, empiricus, less
+
+*/
+
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,400,400i,600,700,900');
+
+html, body {
+	border: 0;
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+div, span, object, iframe, img, table, caption, thead, tbody,
+tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
+nav, footer, header, section, summary, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+ol, ul, li, fieldset, legend, label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  caption, th, td {
+    text-align: left;
+    vertical-align: middle;
+  }
+}
+
+a img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+ul{list-style: none}
+a {text-decoration: none; color: #000;}
+
+// fim do reset //
+
+//my less code
+//variaveis e mixins
+.radius(@radius){
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+
+@white: #fff;
+@black: #000;
+@red:#b21736;
+@grey: #282727;
+@lg-grey: #6d6d6d;
+@padding: 70px 0;
+
+//media queries
+@desktop:   ~"only screen and (min-width: 960px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@mobile:    ~"only screen and (max-width: 719px)";
+
+
+.btn-red {
+	background: @red;
+	border: 1px solid @red;
+	color: @white;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 21px;
+}
+.btn-circle {
+	.radius(@radius: 50%);
+	background: @white;
+	height: 30px;
+	color: @red;
+	height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -20px;
+
+    .icon {
+		font-size: 40px;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+.title {
+	color: @white;
+	margin: 20px 0;
+}
+
+.title-secondary {
+	color: @red;
+}
+
+.ptext {
+	color: @lg-grey;
+	margin: 30px 0;
+}
+
+body {
+
+	h2 {
+		font-family: 'Raleway', sans-serif;
+		font-weight: 900;
+		font-size: 42px;
+		text-transform: uppercase;
+		
+		@media @mobile, @tablet {
+	  	    font-size: 2em;
+		}
+
+	}
+
+	h3 {
+		color: @lg-grey;
+		font-size: 29px;
+		text-transform: uppercase;
+		margin: 20px 0;
+	}
+
+	.container {
+		width: 90%;
+		max-width: 900px;
+		margin: 0 auto;
+		
+		@media @mobile, @tablet {
+	  	    padding: 0 20px;
+		}
+
+	}
+
+	.flex {
+		display: flex;
+	}
+	.end {
+		justify-content: flex-end;
+	}
+	.between {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header {
+		height: 130px;
+		display: flex;
+    	align-items: center;
+
+    	@media @mobile, @tablet {
+	  	    position: fixed;
+		    width: 100%;
+		    z-index: 9999;
+		    background: @white;
+	        border-bottom: 1px solid @lg-grey;
+		}
+
+    	.container {
+    		max-width: 919px;
+    	}
+
+		h1 {
+		    background: url(../images/logo.png) no-repeat 0;
+		    width: 202px;
+		    text-indent: -9999px;
+		    height: 68px;
+		    background-size: contain;
+		}
+
+		.menu-mobile {
+		  	display: none;
+		  	font-size: 40px;
+		  	color: @red;
+
+		  	@media @mobile, @tablet {
+			  	display: block;
+			  	right: 30px;
+			    position: absolute;
+			    top: 30px;
+			}
+
+		}
+
+		.menu-main {
+			max-width: 636px;
+
+			@media @mobile, @tablet {
+			  	display: none;
+		  	    position: absolute;
+			    top: 131px;
+			    background: #fff;
+			    width: 90%;
+			    right: 0;
+			    text-align: right;
+			    font-size: 2em;
+			}
+
+			ul {
+				display: flex;
+
+				@media @mobile, @tablet {
+					display: block;
+				}
+
+				li {
+					margin: 0 15px;
+
+					@media @desktop{
+
+						 &:first-child{
+						 	margin-left: 0;
+						 }
+						  &:last-child{
+						  	margin-right: 0;
+						  }
+					}
+
+					a {
+						font-size: 14px;
+
+						&:hover{
+							color: @red;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	#main {
+		@media @mobile, @tablet {
+			position: relative;
+	  	    top: 130px;
+		}
+		.banner {
+			background: url(../images/banner-bg.png) no-repeat;
+			width: 100%;
+			background-size: cover;
+			position: relative;
+			padding: @padding;
+
+			.float-social {
+				position: absolute;
+				top: 125px;
+				left: 5%;
+
+				@media @mobile, @tablet {
+					display: none;
+				}
+
+				a {
+					display: block;
+
+					&.face {
+						background: #3b5998;
+					}
+					&.twt {
+						background: #00aced;
+					}
+					&.lkn {
+						background: #0077B5;
+					}
+					&.ggl {
+						background: #dd4b39;
+					}
+					&.zap {
+						background: #25d366;
+					}
+					&.mail {
+						background: @lg-grey;
+					}
+				}
+
+				.count {
+					font-size: 12px;
+					color: @white;
+					text-align: center;
+					display: block;
+					padding: 2px 5px;
+					font-family: Arial;
+				}
+
+				.icones {
+					color: @white;
+				    text-align: center;
+				    width: 100%;
+				    font-size: 30px;
+				    line-height: 40px;
+					height: 40px;
+				}
+			}
+
+			.container {
+				max-width: 768px;
+			}
+
+			.title {
+				text-align: center;
+			}
+
+			h4 {
+				font-size: 21px;
+				color: @white;
+				width: 100%;
+			    max-width: 50%;
+			    margin: 20px auto;
+			    text-align: center;
+				font-weight: 100;
+			}
+
+			.home-form {
+				
+			    width: 100%;
+			    max-width: 684px;
+			    margin: 0 auto;
+			    display: flex;
+			    justify-content: center;
+
+				.input {
+					width: 70%;
+					padding: 0 30px;
+
+					&::placeholder {
+						color: @red;
+						font-size: 16px;
+						font-style: italic;
+					}
+				}
+
+				.btn-red {
+					padding: 10px 40px;
+				}
+			}
+
+			.btn-circle {
+		
+			}
+		}
+
+		.report {
+			background: @grey;
+			padding: @padding;
+
+			.ptext {
+				color: @white;
+
+			}
+
+		}
+
+		.advantages {
+			padding: @padding;
+			
+			.btn-red {
+			
+				&.top { 
+				    font-size: 16px;
+				    width: fit-content;
+				    display: block;
+				    margin: 0 auto;
+
+					.icon {
+					    vertical-align: -4px;
+	    				font-size: 32px;
+	    				margin: 0 10px 0 0;
+					}
+				}
+			}
+		}
+
+		.about {
+			padding: @padding;
+			background: url(../images/background-footer.png) no-repeat;
+		    background-size: 100% 100%;
+		    position: relative;
+
+
+			.ptext {
+				color: @white;
+				line-height: 30px;
+				font-size: 21px;
+				z-index: 2;
+				position: relative;
+			}
+
+			.logo-footer {
+				position: absolute;
+				top: 2px;
+	    		right: 0;
+	    		 z-index: 1;
+
+	    		@media @mobile, @tablet {
+			  	    opacity: 0.5;
+				}
+			}
+		}
+
+		footer {
+			&.rodape {
+				background: @black;
+				color: @white;
+				padding: 20px 0;
+
+				.ptext {
+					color: @white;
+					margin-top: 0;
+					font-size: 14px;
+
+					a {
+						color: @white;
+					}
+				}
+				
+				.contact {
+
+					align-items: baseline;
+
+					@media @mobile, @tablet {
+				  	    flex-direction: column;
+					}
+
+					h4 {
+						text-transform: uppercase;
+						margin-bottom: 20px;
+					}
+
+					address{
+						font-style: normal;
+
+						img, p {
+							float: left;
+						}
+
+						.ptext {
+							margin-left: 10px;
+						}
+					}
+
+					.social {
+						display: flex;
+						margin-bottom: 20px;
+
+						a {
+							color: @white;
+							border: 1px solid @white;
+							margin: 0;
+							display: block;
+							width: 30px;
+							height: 30px;
+
+							i {
+								display: block;
+								text-align: center;
+								line-height: 30px;
+							}
+						}
+					}
+				}
+
+				.legal {
+
+					small{
+						font-size: 12px;
+					}
+				}
+			}
+		}
+		
+	}
+
+}
